@@ -20,11 +20,10 @@ export default function ServiceCard({
 	footer: string
 }) {
 	return (
-		<Card>
+		<Card className='h-96'>
 			<CardHeader>
 				<CardTitle>{title}</CardTitle>
-				<CardDescription>{description}</CardDescription>
-				<CardAction>Card Action</CardAction>
+				<CardDescription>{description}</CardDescription>				
 			</CardHeader>
 			<CardContent>
 				<p>{content}</p>

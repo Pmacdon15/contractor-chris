@@ -195,7 +195,7 @@ function CarouselPrevious({
 			variant={variant}
 			{...props}
 		>
-			<ArrowLeft />
+			<ArrowLeft color="black" />
 			<span className="sr-only">Previous slide</span>
 		</Button>
 	)
@@ -225,7 +225,7 @@ function CarouselNext({
 			variant={variant}
 			{...props}
 		>
-			<ArrowRight />
+			<ArrowRight color="black" />
 			<span className="sr-only">Next slide</span>
 		</Button>
 	)

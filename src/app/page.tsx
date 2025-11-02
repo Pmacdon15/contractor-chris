@@ -4,7 +4,7 @@ import Hero from '@/components/hero/hero'
 
 export default function Home() {
 	return (
-		<div className="flex flex-col gap-16 w-full items-center">
+		<div className="flex flex-col gap-4 md:gap-16 w-full items-center">
 			<Hero />
 			<ContentSectionOne />
 			<ContentSectionTwo />
@@ -23,7 +23,7 @@ function ContentSectionTwo() {
 				</p>
 			</div>
 
-			<div className="border-2 w-5/6 h-96">
+			<div className="w-5/6 ">
 				<ServicesCarousel />
 			</div>
 		</div>
