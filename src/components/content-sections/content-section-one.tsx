@@ -10,7 +10,7 @@ export function ContentSectionOne() {
 			<div className="w-full justify-end flex">
 				<Image
 					alt={'Reno Image'}
-					className=' border shadow-2xl'
+					className=' border shadow-lg rounded-sm'
 					height={600}
 					src={'/reno1.png'}
 					width={600}
