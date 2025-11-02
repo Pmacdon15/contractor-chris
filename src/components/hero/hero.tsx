@@ -1,4 +1,4 @@
-import { Button } from '../ui/button'
+import GetAQuoteFormPopover from '../popovers/get-a-quote-form-popover'
 
 export default function Hero() {
 	return (
@@ -6,9 +6,7 @@ export default function Hero() {
 			<div className="col-span-2 sm:col-span-1 flex flex-col  items-center justify-end mb-8 md:justify-center  text-4xl font-bold gap-4 pl-4 md:pl-8">
 				<h1>Need Work Done On Your House?</h1>
 				<h1>We Are Reliable And Consistence</h1>
-				<Button className="mt-4" size="lg">
-					Get a Quote Today
-				</Button>
+				<GetAQuoteFormPopover />
 			</div>
 		</div>
 	)

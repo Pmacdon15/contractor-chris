@@ -5,7 +5,7 @@ import Hero from '@/components/hero/hero'
 
 export default function Home() {
 	return (
-		<div className="flex flex-col gap-4 md:gap-16 w-full items-center">
+		<div className="flex flex-col gap-4 md:gap-16 w-full items-center p-2">
 			<Hero />
 			<ContentSectionOne />
 			<ContentSectionTwo />
