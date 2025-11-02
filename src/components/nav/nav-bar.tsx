@@ -13,21 +13,33 @@ import {
 } from '@/components/ui/navigation-menu'
 
 // import { useIsMobile } from '@/hooks/use-mobile'
-
 const components: { title: string; href: string; description: string }[] = [
 	{
-		title: 'Handy Man Services',
-		href: '/services/handy-man',
-		description:
-			'A modal dialog that interrupts the user with important content and expects a response.',
+		title: 'Handyman Services',
+		href: '/services/handyman',
+		description: 'Professional and reliable handyman solutions for your home or business',
 	},
 	{
-		title: 'General Contracting',
-		href: '/services/general-contracting',
-		description:
-			'For sighted users to preview content available behind a link.',
+		title: 'Drywall & Framing',
+		href: '/services/drywall-framing',
+		description: 'Quality structural work and seamless drywall finishing',
 	},
-	]
+	{
+		title: 'Finishing & Trim',
+		href: '/services/finishing-trim',
+		description: 'Precision carpentry and seamless finishing for interiors and cabinetry',
+	},
+	{
+		title: 'Painting Services',
+		href: '/services/painting',
+		description: 'High-quality paint work with attention to detail',
+	},
+	{
+		title: 'Kitchen Remodeling',
+		href: '/services/kitchen-remodeling',
+		description: 'Transform your kitchen into a modern, functional space',
+	},
+]
 
 export function NavBar() {
 	// const isMobile = useIsMobile()
@@ -73,7 +85,7 @@ export function NavBar() {
 						asChild
 						className={navigationMenuTriggerStyle()}
 					>
-						<Link href="/contact">Get a Quote</Link>
+						<Link href="/get-a-quote">Get a Quote</Link>
 					</NavigationMenuLink>
 				</NavigationMenuItem>
 			</NavigationMenuList>

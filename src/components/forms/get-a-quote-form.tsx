@@ -69,7 +69,7 @@ export function GetAQuoteForm() {
 	}
 
 	return (
-		<Card className="w-full sm:max-w-4xl">
+		<Card className="w-full sm:max-w-4xl border-2 shadow-2xl">
 			<CardHeader>
 				<CardTitle>Get a Quote</CardTitle>
 				<CardDescription>
