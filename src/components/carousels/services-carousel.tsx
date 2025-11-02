@@ -1,3 +1,6 @@
+'use client'
+import Autoplay from 'embla-carousel-autoplay'
+import React from 'react'
 import ServiceCard from '../cards/service-card'
 import {
 	Carousel,
@@ -37,8 +40,15 @@ const serviceData = [
 	},
 ]
 export default function ServicesCarousel() {
+	const plugin = React.useRef(
+		Autoplay({ delay: 2000, stopOnInteraction: true }),
+	)
 	return (
-		<Carousel>
+		<Carousel
+			onMouseEnter={plugin.current.stop}
+			onMouseLeave={plugin.current.reset}
+			plugins={[plugin.current]}
+		>
 			<CarouselContent>
 				{serviceData.map((service, index) => (
 					<CarouselItem
