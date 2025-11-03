@@ -1,11 +1,9 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import type * as React from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import * as z from 'zod'
-
+import type * as z from 'zod'
 import { Button } from '@/components/ui/button'
 import {
 	Card,
@@ -16,32 +14,29 @@ import {
 	CardTitle,
 } from '@/components/ui/card'
 import { Field } from '@/components/ui/field'
+import { useSendMessage } from '@/lib/mutations/send-message'
+import { formSchema } from '@/lib/zod/schemas'
 import { ControlledTextArea } from './controlled-text-area'
 import { ControlledTextInput } from './controlled-text-input'
 
-// import {
-// 	InputGroup,
-// 	InputGroupAddon,
-// 	InputGroupText,
-// 	InputGroupTextarea,
-// } from '@/components/ui/input-group'
-
-const formSchema = z.object({
-	full_name: z
-		.string()
-		.min(3, 'Full Name must be at least 3 characters.')
-		.max(25, 'Full Name must be at most 25 characters.'),
-	email: z
-		.email('Enter your email')
-		.min(3, 'Email must be at least 3 characters.')
-		.max(50, 'Email must be at most 50 characters.'),
-	message: z
-		.string()
-		.min(20, 'Message must be at least 20 characters.')
-		.max(200, 'Message must be at most 200 characters.'),
-})
-
 export function GetAQuoteForm() {
+	const { mutate } = useSendMessage({
+		onSuccess: () => {
+			toast.success('Email Sent', {
+				description: 'Your message has been sent to Contractor Chris!',
+			})
+			form.reset()
+		},
+		onError: (error) => {
+			toast.error('Error Sending Email', {
+				description:
+					error instanceof Error
+						? error.message
+						: 'An error occurred while sending your message.',
+			})
+		},
+	})
+
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -52,20 +47,7 @@ export function GetAQuoteForm() {
 	})
 
 	function onSubmit(data: z.infer<typeof formSchema>) {
-		toast('You submitted the following values:', {
-			description: (
-				<pre className="bg-code text-code-foreground mt-2 w-[320px] overflow-x-auto rounded-md p-4">
-					<code>{JSON.stringify(data, null, 2)}</code>
-				</pre>
-			),
-			position: 'bottom-right',
-			classNames: {
-				content: 'flex flex-col gap-2',
-			},
-			style: {
-				'--border-radius': 'calc(var(--radius)  + 4px)',
-			} as React.CSSProperties,
-		})
+		mutate(data)
 	}
 
 	return (

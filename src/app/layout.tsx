@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from 'sonner'
 import PageContainer from '@/components/container/page-container'
 import LayoutHeader from '@/components/headers/layout-header'
+import { Providers } from '@/components/providers'
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -27,17 +28,19 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
-				<PageContainer>
-					<LayoutHeader />
-					{children}
-				</PageContainer>
-				<Toaster />
-				<Analytics />
-			</body>
-		</html>
+		<Providers>
+			<html lang="en">
+				<body
+					className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				>
+					<PageContainer>
+						<LayoutHeader />
+						{children}
+					</PageContainer>
+					<Toaster />
+					<Analytics />
+				</body>
+			</html>
+		</Providers>
 	)
 }
