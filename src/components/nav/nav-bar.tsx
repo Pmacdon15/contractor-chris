@@ -13,30 +13,42 @@ import {
 } from '@/components/ui/navigation-menu'
 
 // import { useIsMobile } from '@/hooks/use-mobile'
-const components: { title: string; href: string; description: string }[] = [
+const components: {
+	id: number
+	title: string
+	href: string
+	description: string
+}[] = [
 	{
+		id: 1,
 		title: 'Handyman Services',
-		href: '/services/handyman',
-		description: 'Professional and reliable handyman solutions for your home or business',
+		href: '/service/handyman',
+		description:
+			'Professional and reliable handyman solutions for your home or business',
 	},
 	{
+		id: 2,
 		title: 'Drywall & Framing',
-		href: '/services/drywall-framing',
+		href: '/service/drywall-framing',
 		description: 'Quality structural work and seamless drywall finishing',
 	},
 	{
+		id: 3,
 		title: 'Finishing & Trim',
-		href: '/services/finishing-trim',
-		description: 'Precision carpentry and seamless finishing for interiors and cabinetry',
+		href: '/service/finishing-&-trim',
+		description:
+			'Precision carpentry and seamless finishing for interiors and cabinetry',
 	},
 	{
+		id: 4,
 		title: 'Painting Services',
-		href: '/services/painting',
+		href: '/service/painting',
 		description: 'High-quality paint work with attention to detail',
 	},
 	{
+		id: 5,
 		title: 'Kitchen Remodeling',
-		href: '/services/kitchen-remodeling',
+		href: '/service/kitchen-remodeling',
 		description: 'Transform your kitchen into a modern, functional space',
 	},
 ]
@@ -61,7 +73,7 @@ export function NavBar() {
 						<ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
 							{components.map((component) => (
 								<ListItem
-									href={component.href}
+									href={`${component.href}`}
 									key={component.title}
 									title={component.title}
 								>
@@ -80,7 +92,7 @@ export function NavBar() {
 					</NavigationMenuLink>
 				</NavigationMenuItem>
 
-                <NavigationMenuItem>
+				<NavigationMenuItem>
 					<NavigationMenuLink
 						asChild
 						className={navigationMenuTriggerStyle()}

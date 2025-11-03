@@ -41,8 +41,8 @@ export function AnimateOnScroll({
 
 	return (
 		<div
-			ref={ref}
 			className={`${className} ${isVisible ? animationClassName : 'opacity-0'}`}
+			ref={ref}
 		>
 			{children}
 		</div>
