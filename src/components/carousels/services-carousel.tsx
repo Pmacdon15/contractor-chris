@@ -46,7 +46,7 @@ export default function ServicesCarousel() {
 	return (
 		<Carousel
 			onMouseEnter={plugin.current.stop}
-			onMouseLeave={plugin.current.play}
+			onMouseLeave={() => plugin.current.play()}
 			plugins={[plugin.current]}
 		>
 			<CarouselContent>
