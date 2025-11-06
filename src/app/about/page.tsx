@@ -1,7 +1,5 @@
-import Hero from "@/components/hero/hero";
+import Hero from '@/components/hero/hero'
 
-export default function Page(){
-    return (
-        <Hero/>
-    )
+export default function Page() {
+	return <Hero />
 }

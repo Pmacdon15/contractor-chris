@@ -15,14 +15,14 @@ export default function ServiceCard({
 }) {
 	return (
 		<Card
-			className={'h-96 p-2 bg-cover bg-center'}
+			className={'h-96 bg-center bg-cover p-2'}
 			style={{ backgroundImage: `url('/${bg}.png')` }}
 		>
 			<CardHeader className="mt-auto">
-				<CardTitle className="bg-accent/90 p-2 rounded-sm">
+				<CardTitle className="rounded-sm bg-accent/90 p-2">
 					{title}
 				</CardTitle>
-				<CardDescription className="bg-accent/90 p-2 rounded-sm text-black">
+				<CardDescription className="rounded-sm bg-accent/90 p-2 text-black">
 					{description}
 				</CardDescription>
 			</CardHeader>

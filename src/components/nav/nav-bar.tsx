@@ -115,10 +115,10 @@ function ListItem({
 		<li {...props}>
 			<NavigationMenuLink asChild>
 				<Link href={href}>
-					<div className="text-sm leading-none font-medium">
+					<div className="font-medium text-sm leading-none">
 						{title}
 					</div>
-					<p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+					<p className="line-clamp-2 text-muted-foreground text-sm leading-snug">
 						{children}
 					</p>
 				</Link>
