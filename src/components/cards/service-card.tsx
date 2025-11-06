@@ -16,7 +16,7 @@ export default function ServiceCard({
 	return (
 		<Card
 			className={'h-96 bg-center bg-cover p-2'}
-			style={{ backgroundImage: `url('/${bg}.png')` }}
+			style={{ backgroundImage: `url('/${bg}')` }}
 		>
 			<CardHeader className="mt-auto">
 				<CardTitle className="rounded-sm bg-accent/90 p-2">

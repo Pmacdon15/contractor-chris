@@ -1,5 +1,6 @@
 'use client'
 
+import type { Route } from 'next'
 import Link from 'next/link'
 import type * as React from 'react'
 import {
@@ -11,47 +12,8 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
-
-// import { useIsMobile } from '@/hooks/use-mobile'
-const components: {
-	id: number
-	title: string
-	href: string
-	description: string
-}[] = [
-	{
-		id: 1,
-		title: 'Handyman Services',
-		href: '/service/handyman',
-		description:
-			'Professional and reliable handyman solutions for your home or business',
-	},
-	{
-		id: 2,
-		title: 'Drywall & Framing',
-		href: '/service/drywall-framing',
-		description: 'Quality structural work and seamless drywall finishing',
-	},
-	{
-		id: 3,
-		title: 'Finishing & Trim',
-		href: '/service/finishing-&-trim',
-		description:
-			'Precision carpentry and seamless finishing for interiors and cabinetry',
-	},
-	{
-		id: 4,
-		title: 'Painting Services',
-		href: '/service/painting',
-		description: 'High-quality paint work with attention to detail',
-	},
-	{
-		id: 5,
-		title: 'Kitchen Remodeling',
-		href: '/service/kitchen-remodeling',
-		description: 'Transform your kitchen into a modern, functional space',
-	},
-]
+import { services } from '@/lib/services'
+ 
 
 export function NavBar() {
 	// const isMobile = useIsMobile()
@@ -71,7 +33,7 @@ export function NavBar() {
 					<NavigationMenuTrigger>Services</NavigationMenuTrigger>
 					<NavigationMenuContent>
 						<ul className="grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-							{components.map((component) => (
+							{services.map((component) => (
 								<ListItem
 									href={`${component.href}`}
 									key={component.title}
@@ -114,7 +76,7 @@ function ListItem({
 	return (
 		<li {...props}>
 			<NavigationMenuLink asChild>
-				<Link href={href}>
+				<Link href={href as Route}>
 					<div className="font-medium text-sm leading-none">
 						{title}
 					</div>
