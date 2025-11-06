@@ -44,4 +44,12 @@ export const services = [
 			'Custom railing installation and fabrication for indoor and outdoor spaces — design, materials, and secure installation',
 		bg: 'railing.jpeg',
 	},
+	{
+		id: 7,
+		title: 'Garden Beds & Hardscaping',
+		href: '/service/garden-hardscaping',
+		description:
+			'Custom garden bed construction and hardscape design including retaining walls, pathways, and landscape features',
+		bg: 'yard.jpeg',
+	},
 ]
