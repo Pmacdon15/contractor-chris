@@ -51,49 +51,62 @@ export function GetAQuoteForm() {
 	}
 
 	return (
-		<Card className="w-full border-2 shadow-2xl sm:max-w-4xl">
+		<Card className="w-full border-border/50 bg-card/50 shadow-lg backdrop-blur-sm sm:max-w-4xl">
 			<CardHeader>
-				<CardTitle>Get a Quote</CardTitle>
-				<CardDescription>
-					Send us a message so we can schedule an on site inspection.{' '}
+				<CardTitle className="font-bold text-2xl text-primary">
+					Get a Quote
+				</CardTitle>
+				<CardDescription className="text-base text-muted-foreground">
+					Send us a message so we can schedule an on-site inspection.
 				</CardDescription>
 			</CardHeader>
 			<CardContent>
 				<form
+					className="space-y-4"
 					id="form-get-a-quote"
 					onSubmit={form.handleSubmit(onSubmit)}
 				>
-					<ControlledTextInput
-						control={form.control}
-						label="Full Name"
-						name="full_name"
-						placeholder="John Doe"
-					/>
-					<ControlledTextInput
-						control={form.control}
-						label="Email"
-						name="email"
-						placeholder="j.doe@example.com"
-					/>
+					<div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+						<ControlledTextInput
+							control={form.control}
+							label="Full Name"
+							name="full_name"
+							placeholder="John Doe"
+						/>
+						<ControlledTextInput
+							control={form.control}
+							label="Email"
+							name="email"
+							placeholder="j.doe@example.com"
+						/>
+					</div>
 					<ControlledTextArea
 						control={form.control}
 						label="Message"
 						name="message"
-						placeholder="This should be a detailed message about the type of work you need done"
+						placeholder="Please describe the work you need done..."
 					/>
 				</form>
 			</CardContent>
-			<CardFooter>
-				<Field orientation="horizontal">
+			<CardFooter className="bg-muted/30 px-6 py-4">
+				<Field
+					className="flex w-full items-center justify-end gap-2"
+					orientation="horizontal"
+				>
 					<Button
+						className="text-muted-foreground hover:text-foreground"
 						onClick={() => form.reset()}
 						type="button"
-						variant="outline"
+						variant="ghost"
 					>
 						Reset
 					</Button>
-					<Button form="form-get-a-quote" type="submit">
-						Submit
+					<Button
+						className="bg-primary px-8 text-primary-foreground hover:bg-primary/90"
+						form="form-get-a-quote"
+						type="submit"
+					>
+						Submit Request
 					</Button>
 				</Field>
 			</CardFooter>

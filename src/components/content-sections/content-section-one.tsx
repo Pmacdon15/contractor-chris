@@ -5,7 +5,7 @@ export function ContentSectionOne() {
 		<div className="flex w-full flex-col gap-4 p-2 sm:grid sm:grid-cols-2 md:w-5/6">
 			<div className="flex items-center justify-center">
 				<AnimateOnScroll animationClassName="animate-in fade-in slide-in-from-left-12 duration-1000">
-					<h1 className="text-center font-bold text-4xl text-black md:ml-8">
+					<h1 className="text-center font-bold text-4xl text-primary md:ml-8 lg:text-5xl">
 						Transform Your Home with Our Expert Renovation Services.
 					</h1>
 				</AnimateOnScroll>

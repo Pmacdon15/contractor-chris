@@ -13,7 +13,6 @@ import {
 	navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
 import { services } from '@/lib/services'
- 
 
 export function NavBar() {
 	// const isMobile = useIsMobile()
@@ -26,7 +25,7 @@ export function NavBar() {
 						asChild
 						className={navigationMenuTriggerStyle()}
 					>
-						<Link href="/">home</Link>
+						<Link href="/">Home</Link>
 					</NavigationMenuLink>
 				</NavigationMenuItem>
 				<NavigationMenuItem>
